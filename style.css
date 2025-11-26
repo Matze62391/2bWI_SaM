@@ -40,18 +40,17 @@ body {
   background: #1a1a1a;
   border: 2px solid #18bfc6;
   border-radius: 8px;
-}
-.sidebar .info h3 {
   color: #18bfc6;
   font-size: 16px;
   margin-bottom: 10px;
 }
 
+
 .main-content {
   flex: 1;
   padding: 30px;
 }
-.main-content h2 {
+.main-content {
   color: #18bfc6;
   font-size: 32px;
   margin-bottom: 30px;
@@ -65,7 +64,7 @@ body {
   margin-bottom: 30px;
   text-align: center;
 }
-.welcome-box h3 {
+.welcome-box {
   color: #18bfc6;
   font-size: 24px;
   margin-bottom: 15px;
@@ -92,13 +91,19 @@ body {
   border-radius: 12px;
   padding: 60px 20px;
   text-align: center;
+  height: 200px;
+  width: 400px;
 }
 .image-box2 {
   background: #1a1a1a;
   border: 3px solid #18bfc6;
   border-radius: 12px;
   padding: 60px 20px;
-  text-align: center;
+  text-align: top center;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 400px;
 }
 .image-box3 {
   background: #1a1a1a;
@@ -106,27 +111,8 @@ body {
   border-radius: 12px;
   padding: 60px 20px;
   text-align: center;
-}
-.image-box4 {
-  background: #1a1a1a;
-  border: 3px solid #18bfc6;
-  border-radius: 12px;
-  padding: 60px 20px;
-  text-align: center;
-}
-.image-box5 {
-  background: #1a1a1a;
-  border: 3px solid #18bfc6;
-  border-radius: 12px;
-  padding: 60px 20px;
-  text-align: center;
-}
-.image-box6 {
-  background: #1a1a1a;
-  border: 3px solid #18bfc6;
-  border-radius: 12px;
-  padding: 60px 20px;
-  text-align: center;
+  height: 200px;
+  width: 400px;
 }
 
 .info-boxes {
@@ -139,13 +125,17 @@ body {
   border: 3px solid #18bfc6;
   border-radius: 12px;
   padding: 25px;
+  color:white;
 }
-.info-card h3 {
+.info-card2 {
   color: #18bfc6;
   font-size: 20px;
   margin-bottom: 12px;
+  color: white;
 }
 .info-card p {
   font-size: 14px;
   line-height: 1.6;
 }
+
+
