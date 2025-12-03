@@ -46,31 +46,28 @@ body {
 }
 
 
-.main-content {
+.main {
   flex: 1;
   padding: 30px;
-}
-.main-content {
   color: #18bfc6;
   font-size: 32px;
   margin-bottom: 30px;
 }
 
-.welcome-box {
+.box {
   background: #1a1a1a;
   border: 3px solid #18bfc6;
   border-radius: 12px;
   padding: 30px;
   margin-bottom: 30px;
   text-align: center;
-}
-.welcome-box {
-  color: #18bfc6;
+  color: #fafafa;
   font-size: 24px;
   margin-bottom: 15px;
 }
 
-.image-container {
+
+.Bild-main {
   background: #1a1a1a;
   border: 3px solid #18bfc6;
   border-radius: 12px;
@@ -79,14 +76,14 @@ body {
   margin-bottom: 30px;
 }
 
-.image-grid {
+.Bild-grid {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 20px;
   margin-bottom: 30px;
 }
-.image-box {
+.Bild-box {
   background: #1a1a1a;
   border: 3px solid #18bfc6;
   border-radius: 12px;
@@ -98,7 +95,7 @@ body {
   align-items: center;
   overflow: hidden;
 }
-.image-box2 {
+.Bild-box2 {
   background: #1a1a1a;
   border: 3px solid #18bfc6;
   border-radius: 12px;
@@ -110,7 +107,7 @@ body {
   align-items: center;
   overflow: hidden;
 }
-.image-box3 {
+.Bild-box3 {
   background: #1a1a1a;
   border: 3px solid #18bfc6;
   border-radius: 12px;
