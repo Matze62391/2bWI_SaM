@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Donut</title>
+  <style>
+    .row {
+      margin-bottom: 10px;
+    }
+    .label {
+      display: inline-block;
+      width: 150px;
+    }
+    .gesamt {
+      font-weight: bold;
+    }
+  </style>
+
+  <script type="text/javascript">
+    const STEUER = 0.1;      
+    const DONUTPREIS = 2.1;  
+
+    function updateOrder() {
+      var anzDonut = parseInt(document.getElementById("anzDonut").value) || 0;
+      var anzSchoki = parseInt(document.getElementById("anzSchoki").value) || 0;
+      var subTotal = (anzDonut + anzSchoki) * DONUTPREIS;
+      var steuerBetrag = subTotal * STEUER;
+      var gesamtBetrag = subTotal + steuerBetrag;
+      document.getElementById("netto").value = "€ " + subTotal.toFixed(2);
+      document.getElementById("steuer").value = "€ " + steuerBetrag.toFixed(2);
+      document.getElementById("gesamt").value = "€ " + gesamtBetrag.toFixed(2);
+    }
+
+    function PlaceOrder(form) {
+      if (!form.name.value.trim()) {
+        alert("Name eingeben!");
+        return;
+      }
+      form.submit();
+    }
+  </script>
+</head>
+
+<body>
+  <div id="Bestellung">
+    <form action="donut_0.html" method="get">
+      <h2>Joe's Just - In - Time Donuts</h2>
+      <h3>Jeder Donut um 50 Cent</h3>
+      <img src="donut.jpg" alt="Donut" width="200">
+      <div class="row">
+        <label for="name" class="label">Name</label>
+        <input type="text" id="name" name="name" value="Markus">
+      </div>
+      <div class="row">
+        <label for="anzDonut" class="label">Anzahl Normal</label>
+        <input type="number" id="anzDonut" name="anzDonut" value="3" onchange="updateOrder();">
+      </div>
+      <div class="row">
+        <label for="anzSchoki" class="label">Anzahl Schoki</label>
+        <input type="number" id="anzSchoki" name="anzSchoki" value="34" onchange="updateOrder();">
+      </div>
+      <div class="row">
+        <label for="abholzeitMin" class="label">Abholzeit in Min</label>
+        <input type="number" id="abholzeitMin" name="abholzeitMin">
+      </div>
+      <div class="row">
+        <label for="netto" class="label">Netto</label>
+        <input type="number" id="netto" name="netto" value="18.5">
+      </div>
+      <div class="row">
+        <label for="steuer" class="label">Steuer</label>
+        <input type="number" id="steuer" name="steuer" value="3.6">
+      </div>
+      <div class="row">
+        <label class="label gesamt">Gesamt</label>
+        <input type="number" id="gesamt" name="gesamt" value="22.1">
+      </div>
+      <input type="button" value="Bestellung abschicken" onclick="PlaceOrder(this.form);">
+    </form>
+  </div>
+</body>
+</html>
