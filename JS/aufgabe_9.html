@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="zid"></div>
+    <script>
+      const container = document.getElementById("zid");
+      container.innerHTML += "Start<br>";
+
+      //Erstelle mit Hilfe einer Schleife und Modulo die folgende Ausgabe liefert (Rechteckbeispiel adaptieren):
+      //X X X X
+      //O O O O
+      //X X X X
+      //O O O O
+      for (let i = 1; i <= 4; i++) {
+        for (let j = 1; j <= 4; j++) {
+          if ((i + j) % 2 === 0) {
+            container.innerHTML += "X ";
+          } else {
+            container.innerHTML += "O ";
+          }
+        }
+        container.innerHTML += "<br>";
+      }
+      //2. Versuche in einer for - Schleife (1-100) alle geraden Zahlen zu addieren (zwei Lösungswege ⇒ Zähler dahingehend verändern das er nur gerade Zahlen zählt und mit Modulo arbeiten.)
+      let sum = 0;
+      for (let i = 1; i <= 100; i++) {
+        if (i % 2 === 0) {
+          sum += i;
+        }
+      }
+      //3. Versuche mit einer for/while Schleife den Anfangsbuchstaben deines Namens auszugeben, z.B.:
+      //XX X XX X
+      //X    X X   x
+      //X            X
+      //X            X
+      const name = "Max";
+      const firstLetter = name[0].toUpperCase();
+      
+      
+    </script>
+  </body>
+</html>
