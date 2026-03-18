@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+    <div id="output2"></div>
+        <script>
+            function add(a,b) {
+                return a + b;
+            }
+            function subtract(a,b) {
+                return a - b;
+            }
+            function multiply(a,b) {
+                return a * b;
+            }
+            function divide(a,b) {
+                if (b === 0) {
+                    return "Error";
+                }
+                return a / b;
+            }
+            function modulo(a,b) {
+                return a % b;
+            }
+            function output(wert,name) {
+                const output = document.getElementById(name);
+                output.innerHTML += name + ": " + wert + "<br>";
+            }
+            function ausgabe(wert, outputId) {
+                /*if (outputId === 1) {
+                    const output = document.getElementById("output");
+                    output.innerHTML += wert + "<br>";
+                } else if (outputId === 2) {
+                    const output2 = document.getElementById("output2");
+                    output2.innerHTML += wert + "<br>";
+                } else if (outputId === 3) {
+                console.log(wert);
+                }*/
+                switch (outputId) {
+                    case 1:
+                        output(wert, "output")
+                        break;
+                    case 2:
+                        output(wert, "output2")
+                        break;
+                    case 3:
+                        console.log(wert);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            ausgabe(add(5, 10),1);
+            ausgabe(subtract(10, 5),2);
+            ausgabe(multiply(5, 10),1);
+            ausgabe(divide(10, 5),2);
+            ausgabe(divide(2, 0),3);
+            ausgabe(modulo(10, 3),1);
+        </script>
+</body>
+</html>
