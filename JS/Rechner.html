@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rechner</title>
+    <link rel="stylesheet" href="Rechner.css" />
+  </head>
+  <body>
+    <h1>Taschenrechner</h1>
+    <input type="text" placeholder="Wert eingeben" id="eingabe" />
+    <br />
+    <div class="dropdown">
+      <button class="dropbtn">Operationen</button>
+      <div class="dropdown-content">
+        <a href="#" onclick="operation('+')">Addition</a>
+        <a href="#" onclick="operation('-')">Subtraktion</a>
+        <a href="#" onclick="operation('*')">Multiplikation</a>
+        <a href="#" onclick="operation('/')">Division</a>
+      </div>
+    </div>
+    <br />
+    <input type="text" placeholder="zweiten Wert" id="eingabe2" />
+    <button id="Berechne" onclick="berechne()">Berechnen</button>
+    <br />
+  </body>
+</html>
