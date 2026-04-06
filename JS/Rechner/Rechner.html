@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rechner</title>
+    <link rel="stylesheet" href="Rechner.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Rechner</h1>
+
+      <input type="text" id="num1" placeholder="Erste Zahl" />
+
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+
+      <input type="text" id="num2" placeholder="Zweite Zahl" />
+
+      <button onclick="Rechner()">Rechne</button>
+
+      <h3>Ergebnis:</h3>
+      <p id="ergebnis">-</p>
+
+      <h3>Alte Ergebnise</h3>
+      <div id="liste"></div>
+
+      <script src="Rechner.js"></script>
+    </div>
+  </body>
+</html>
