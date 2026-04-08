@@ -1,71 +1,66 @@
 let history = [];
 
 function Rechner() {
-  let value1 = document.getElementById("num1").value;
-  let value2 = document.getElementById("num2").value;
-
+  let num1 = parseFloat(document.getElementById("num1").value);
+  let num2 = parseFloat(document.getElementById("num2").value);
   let operator = document.getElementById("operator").value;
 
-  let num1 = parseFloat(value1);
-  let num2 = parseFloat(value2);
-
   if (isNaN(num1) || isNaN(num2)) {
-    document.getElementById("ergebnis").textContent =
-      "Bitte gib eine Zahl ein!";
+    document.getElementById("ergebnis").textContent = "Bitte gib eine Zahl ein!";
     return;
   }
 
   let ergebnis;
 
-  if (operator === "+") {
-    ergebnis = num1 + num2;
-  } else if (operator === "-") {
-    ergebnis = num1 - num2;
-  } else if (operator === "*") {
-    ergebnis = num1 * num2;
-  } else if (operator === "/") {
+  if (operator === "+") ergebnis = num1 + num2;
+  else if (operator === "-") ergebnis = num1 - num2;
+  else if (operator === "*") ergebnis = num1 * num2;
+  else if (operator === "/") {
     if (num2 === 0) {
-      document.getElementById("ergebnis").textContent = "Mit 0 kann nicht dividiert werden";
+      document.getElementById("ergebnis").textContent = "Mit 0 kann nicht dividiert werden!";
       return;
     }
     ergebnis = num1 / num2;
   }
 
   document.getElementById("ergebnis").textContent = ergebnis;
+  history.push(num1 + " " + operator + " " + num2 + " = " + ergebnis);
 
-  let old = num1 + " " + operator + " " + num2 + " = " + ergebnis;
-
-  history.push(old);
-
-  Rechnungen();
+  Anzeigen();
 }
 
-function Rechnungen() {
-  let liste = document.getElementById("liste");
-
-  liste.innerHTML = "";
-
-  history.forEach(function (item, index) {
-    let row = document.createElement("div");
-
-    let text = document.createElement("span");
-    text.textContent = item + " ";
-
-    let loeschen = document.createElement("button");
-    loeschen.textContent = "Löschen";
-
-    loeschen.onclick = function () {
-      deleteListe(index);
-    };
-
-    row.appendChild(text);
-    row.appendChild(loeschen);
-
-    liste.appendChild(row);
-  });
+function Anzeigen() {
+//Text
+  document.getElementById("textAusgabe").innerHTML = history
+    .map(item => `<p>${item}</p>`)
+    .join("");
+//Tabelle
+  document.getElementById("tabellenAusgabe").innerHTML =
+    "<tr><th>Rechnung</th></tr>" +
+    history.map(item => `<tr><td>${item}</td></tr>`).join("");
+//Liste
+  document.getElementById("listenAusgabe").innerHTML = history
+    .map((item, index) => `<li>${item} <button onclick="Loeschen(${index})">Löschen</button></li>`)
+    .join("");
 }
 
-function deleteListe(index) {
+function Loeschen(index) {
   history.splice(index, 1);
-  Rechnungen();
+  Anzeigen();
+}
+
+function AnzeigeWechseln() {
+  let auswahl = document.getElementById("auswahl").value;
+
+  document.getElementById("textBereich").style.display = "none";
+  document.getElementById("tabellenBereich").style.display = "none";
+  document.getElementById("listenBereich").style.display = "none";
+
+  if (auswahl === "text") {
+    document.getElementById("textBereich").style.display = "block";
+  } else if (auswahl === "tabelle") {
+    document.getElementById("tabellenBereich").style.display = "block";
+  } else if (auswahl === "liste") {
+    document.getElementById("listenBereich").style.display = "block";
+  }
 }

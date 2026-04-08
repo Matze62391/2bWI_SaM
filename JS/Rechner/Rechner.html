@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rechner</title>
-    <link rel="stylesheet" href="Rechner.css">
+    <link rel="stylesheet" href="Rechner.css" />
   </head>
   <body>
     <div class="container">
@@ -26,8 +26,28 @@
       <h3>Ergebnis:</h3>
       <p id="ergebnis">-</p>
 
-      <h3>Alte Ergebnise</h3>
-      <div id="liste"></div>
+
+      <h3>Anzeige auswählen</h3>
+      <select id="auswahl" onchange="AnzeigeWechseln()">
+        <option value="text">Text</option>
+        <option value="tabelle">Tabelle</option>
+        <option value="liste">Liste</option>
+      </select>
+
+      <div id="textBereich">
+        <h3>Text</h3>
+        <div id="textAusgabe"></div>
+      </div>
+
+      <div id="tabellenBereich" style="display: none">
+        <h3>Tabelle</h3>
+        <table border="1" id="tabellenAusgabe"></table>
+      </div>
+
+      <div id="listenBereich" style="display: none">
+        <h3>Liste</h3>
+        <ul id="listenAusgabe"></ul>
+      </div>
 
       <script src="Rechner.js"></script>
     </div>
