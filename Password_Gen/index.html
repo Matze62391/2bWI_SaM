@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Password Generator</h1>
+  <div class="container">
+    <div class="passwort-container">
+      <h1>Passwort Generator</h1>
+      <input type="text" readonly id="password">
 
-        <div class="password-container">
-            <input type="text" readonly id="password">
-            <i class ="far fa-copy" id="copy-btn"></i>
-        </div>
+      <img src="Bilder/copy.png" alt="copy" height="20px" onclick="copyPassword()">
+
+      <div class="option">
+        <label for="length">Länge:</label>
+        <input type="number" id="length" value="12" min="4" max="32">
+      </div>
+      <div class="options">
+        <label><input type="checkbox" checked>Großbuchstaben</label>
+      </div>
+      <div class="options">
+        <label><input type="checkbox" checked>Kleinbuchstaben</label>
+      </div>
+      <div class="options">
+        <label><input type="checkbox" checked>Zahlen</label>
+      </div>
+      <div class="options">
+        <label><input type="checkbox" checked>Sonderzeichen</label>
+      </div>
     </div>
-    <script src="script.js"></script>
+    <button onclick="generatePassword()">Generieren</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
