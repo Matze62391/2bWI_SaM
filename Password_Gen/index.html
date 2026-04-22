@@ -1,39 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <div class="passwort-container">
-      <h1>Passwort Generator</h1>
-      <input type="text" readonly id="password">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="passwort-container">
+        <h1>Passwort Generator</h1>
+        <!--Output box-->
+        <input type="text" readonly id="password" />
 
-      <img src="Bilder/copy.png" alt="copy" height="20px" onclick="copyPassword()">
-
-      <div class="option">
-        <label for="length">Länge:</label>
-        <input type="number" id="length" value="12" min="4" max="32">
+        <img
+          src="Bilder/copy.png"
+          alt="copy"
+          height="20px"
+          onclick="copyPassword()"
+        />
+        <!--Slider-->
+        <div class="option">
+          <label for="myRange">Länge:</label>
+          <input
+            type="range"
+            min="1"
+            max="35"
+            value="12"
+            class="slider"
+            id="myRange"
+          />
+          <span id="sliderValue">12</span>
+        </div>
+        <!--Checkboxen-->
+        <div class="options">
+          <label
+            ><input type="checkbox" id="Großbox" checked />Großbuchstaben</label
+          >
+        </div>
+        <div class="options">
+          <label
+            ><input
+              type="checkbox"
+              id="Kleinbox"
+              checked
+            />Kleinbuchstaben</label
+          >
+        </div>
+        <div class="options">
+          <label><input type="checkbox" id="Zahlenbox" checked />Zahlen</label>
+        </div>
+        <div class="options">
+          <label
+            ><input
+              type="checkbox"
+              id="Sonderbox"
+              checked
+            />Sonderzeichen</label
+          >
+        </div>
+        <!--Generieren-->
       </div>
-      <div class="options">
-        <label><input type="checkbox" checked>Großbuchstaben</label>
-      </div>
-      <div class="options">
-        <label><input type="checkbox" checked>Kleinbuchstaben</label>
-      </div>
-      <div class="options">
-        <label><input type="checkbox" checked>Zahlen</label>
-      </div>
-      <div class="options">
-        <label><input type="checkbox" checked>Sonderzeichen</label>
-      </div>
+      <button onclick="generatePassword()">Generieren</button>
     </div>
-    <button onclick="generatePassword()">Generieren</button>
-  </div>
+    <div class="History">
+      <ul id="passwordHistory"></ul>
+    </div>
+    '
 
-  <script src="script.js"></script>
-</body>
+    <script src="JS/script.js"></script>
+  </body>
 </html>

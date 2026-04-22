@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.container {
+  display: inline-block;
+  text-align: left;
+}
+
+
+.History {
+  width: 400px;
+  margin: 1rem auto;
+  max-height: 150px;
+  overflow-y: auto;
+  background: #eee;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+#passwordHistory {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#passwordHistory li {
+  padding: 4px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+#passwordHistory li:last-child {
+  border-bottom: none;
+}
+
+#passwordHistory button {
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 0.9em;
+}
