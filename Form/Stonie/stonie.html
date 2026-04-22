@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iRock</title>
+    <script>
+      var on = 1;
+
+      function touchStein() {
+        var username = "xx";
+        if (username) {
+          var stein = document.getElementById("Stein");
+
+          if (on == 1) {
+            stein.src = "bilder/stone_sad.png";
+            on = 0;
+          } else {
+            stein.src = "bilder/stone_happy.png"; 
+            on = 1;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body onload="alert('Hallo hier kommt Steini')">
+    <div id="placestone">
+      <div style="margin-top: 200px; text-align: center">
+        <img
+          id="Stein"
+          src="bilder/stone_happy.png"
+          alt="iRock_happy"
+          width="200"
+          height="auto"
+          onclick="touchStein()"
+        />
+      </div>
+    </div>
+  </body>
+</html>

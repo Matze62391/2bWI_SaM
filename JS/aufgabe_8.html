@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="zid"></div>
+    <script>
+      const container = document.getElementById("zid");
+      container.innerHTML += "Start<br>";
+      // Erstelle eine Zufallszahl zwischen 5 und 10
+      let min = 5;
+      let max = 10;
+      let random = Math.floor(Math.random() * (max - min + 1)) + min;
+        switch (random) {
+        case 10: container.innerHTML += "Ten"; break;
+        case 9:  container.innerHTML += "Nine"; break;
+        case 8:  container.innerHTML += "Eight"; break;
+        case 7:  container.innerHTML += "Seven"; break;
+        case 6:  container.innerHTML += "Six"; break;
+        case 5:  container.innerHTML += "Five"; break;
+        default: container.innerHTML += "Unbekannt";
+      }
+      container.innerHTML += random + "<br>";
+    </script>
+  </body>
+</html>

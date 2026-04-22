@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schülerliste</title>
+  </head>
+  <body>
+    <div id="output"></div>
+
+    <script>
+      function output(wert, name) {
+        const output = document.getElementById(name);
+        output.innerHTML += name + ": " + wert + "<br>";
+      }
+
+      function outputSchleife(schueler) {
+        for (let i = 0; i < schueler.length; i++) {
+          output(schueler[i], "output");
+        }
+        output("<hr>", "output");
+      }
+
+      let schueler = [
+        "Matteo",
+        "Marius",
+        "Noah",
+        "Nico",
+        "Elias",
+        "Dilsad",
+        "Yigit",
+        "Emir",
+        "Hasan",
+        "Yannick",
+      ];
+
+      outputSchleife(schueler, "Originial:");
+
+      schueler.sort();
+      outputSchleife(schueler, "Sort:");
+
+      schueler.reverse();
+      outputSchleife(schueler, "Reverse:");
+
+      schueler.unshift("Tobias");
+      outputSchleife(schueler, "Shift:");
+
+      schueler.push("Luis");
+      outputSchleife(schueler, "Push:");
+
+      let schueler2 = schueler.slice(3, 6);
+      outputSchleife(schueler2, "Slice 3,6:");
+    </script>
+  </body>
+</html>

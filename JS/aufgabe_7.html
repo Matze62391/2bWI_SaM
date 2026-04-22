@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="zid"></div>
+    <script>
+      const container = document.getElementById("zid");
+      container.innerHTML += "Start<br>";
+      // Erstelle zwei Zufallszahl zwischen 0 und 100
+      let zahl1 = Math.floor(Math.random() * 101);
+      let zahl2 = Math.floor(Math.random() * 101);
+      // Wenn die erste Zahl kleiner ist als die zweite UND die erste Zahl kleiner ist als 50
+      // dann gib aus "Zahl 1 ist kleiner als Zahl 2 und Mini"
+      if (zahl1 < zahl2 && zahl1 < 50) {
+        container.innerHTML += "Zahl 1 ist kleiner als Zahl 2 und Mini<br>";
+      }
+      // Wenn die erste Zahl kleiner ist als 30 oder die zweite Zahl kleiner ist als 30
+      // dann gib aus "Eine der beiden ist kleiner als 30"
+      if (zahl1 < 30 || zahl2 < 30) {
+        container.innerHTML += "Eine der beiden ist kleiner als 30<br>";
+      }
+      // Wenn die erste Zahl kleiner ist als 50 UND die zweite Zahl ungleich 50 ist
+      // dann gib aus "Erste Zahl klein, zweite kein 50iger"
+      if (zahl1 < 50 && zahl2 !== 50) {
+        container.innerHTML += "Erste Zahl klein, zweite kein 50iger<br>";
+      }
+      //1. Der Fahrer darf das Motorrad fahren, wenn er 24 Jahre oder älter ist oder den Motorradführerschein besitzt aber nicht mehr in der Probezeit ist.
+      let alter = Math.floor(Math.random() * 100); // Zufallsalter zwischen 0 und 99
+      let fuehrerschein = Math.floor(Math.random() * 3); // Zufällig true
+
+      if (alter >= 24 || (fuehrerschein === 1 && alter > 18)) {
+        container.innerHTML += "Der Fahrer darf das Motorrad fahren<br>";
+      }
+      //2. Das Kind darf den Kinofilm sehen, wenn es älter als 14 ist oder einen Elternteil mit dabei hat. 3. Wenn ich den Kurs “Softwarearchitekturen” besuchen möchte, muss ich den Coding Campus besucht haben oder bereits 2 Jahre Berufserfahrung vorweisen.
+        let alterKind = Math.floor(Math.random() * 20); // Zufallsalter des Kindes zwischen 0 und 19
+        let elternteilDabei = Math.random() < 0.5; // Zufällig true oder false
+        let codingCampusBesucht = Math.random() < 0.5; // Zufällig true oder false
+        let berufserfahrung = Math.floor(Math.random() * 5); // Zufällige
+        if (alterKind > 14 || elternteilDabei) {
+            container.innerHTML += "Das Kind darf den Kinofilm sehen<br>";
+        }
+      //4. Der Bewerber hat eine Chance auf eine Anstellung wenn er bereits über 5 Jahre Erfahrung vorweist oder einen Master Abschluss besitzt und auf jeden Fall eine einwandfreies Leumundszeugnis besitzt.
+        let berufserfahrungBewerber = Math.floor(Math.random() * 10); // Zufällige Berufserfahrung zwischen 0 und 9 Jahren
+        let masterAbschluss = Math.random() < 0.5; // Zufällig true oder false
+        let leumundszeugnisEinwandfrei = Math.random() < 0.5; // Zufällig true oder false
+
+        if (berufserfahrungBewerber > 5 || (masterAbschluss && leumundszeugnisEinwandfrei)) {
+            container.innerHTML += "Der Bewerber hat eine Chance auf eine Anstellung<br>";
+        }
+    </script>
+  </body>
+</html>
