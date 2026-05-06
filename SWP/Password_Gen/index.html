@@ -10,61 +10,35 @@
     <div class="container">
       <div class="passwort-container">
         <h1>Passwort Generator</h1>
-        <!--Output box-->
+        <!--Output-->
         <input type="text" readonly id="password" />
-
-        <img
-          src="Bilder/copy.png"
-          alt="copy"
-          height="20px"
-          onclick="copyPassword()"
-        />
+        <img src="Bilder/copy.png" alt="copy" height="20px" onclick="copyPassword()"/>
         <!--Slider-->
         <div class="option">
-          <label for="myRange">Länge:</label>
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value="12"
-            class="slider"
-            id="myRange"
-          />
+          <label for="range">Länge:</label>
+          <input type="range" min="1" max="100" value="12" class="slider" id="range"/>
           <span id="sliderValue">12</span>
         </div>
         <!--Checkboxen-->
         <div class="options">
           <label
-            ><input type="checkbox" id="Großbox" checked />Großbuchstaben</label
-          >
+            ><input type="checkbox" id="Großbox" checked />Großbuchstaben</label>
         </div>
         <div class="options">
-          <label
-            ><input
-              type="checkbox"
-              id="Kleinbox"
-              checked
-            />Kleinbuchstaben</label
-          >
+          <label><input type="checkbox" id="Kleinbox" checked />Kleinbuchstaben</label>
         </div>
         <div class="options">
           <label><input type="checkbox" id="Zahlenbox" checked />Zahlen</label>
         </div>
         <div class="options">
-          <label
-            ><input
-              type="checkbox"
-              id="Sonderbox"
-              checked
-            />Sonderzeichen</label
-          >
+          <label><input type="checkbox" id="Sonderbox" checked />Sonderzeichen</label>
         </div>
         <!--Generieren-->
       </div>
       <button onclick="generatePassword()">Generieren</button>
     </div>
-    <div class="History">
-      <ul id="passwordHistory"></ul>
+    <div class="verlauf">
+      <ul id="passwordverlauf"></ul>
     </div>
     <script src="JS/script.js"></script>
   </body>

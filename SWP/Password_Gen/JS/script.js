@@ -3,10 +3,10 @@ let Kleinbuchstaben = "abcdefghijklmnopqrstuvwxyz";
 let Zahlen = "0123456789";
 let Sonderzeichen = "!@#€$§%&/()=?";
 
-const slider = document.getElementById("myRange");
+const slider = document.getElementById("range");
 const sliderValue = document.getElementById("sliderValue");
 const passwordField = document.getElementById("password");
-const passwordHistory = document.getElementById("passwordHistory");
+const passwordverlauf = document.getElementById("passwordverlauf");
 
 sliderValue.textContent = slider.value;
 
@@ -56,7 +56,7 @@ function generatePassword() {
 
   listItem.appendChild(passwordText);
   listItem.appendChild(deleteButton);
-  passwordHistory.prepend(listItem);
+  passwordverlauf.prepend(listItem);
 }
 
 function copyPassword() {
